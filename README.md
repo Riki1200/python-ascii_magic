@@ -1,6 +1,8 @@
 # ASCII Magic
 
-Python package that converts images into ASCII art. Requires colorama and PIL.
+Python package that converts images into ASCII art with terminal colors. Thanks to Colorama it's compatible with the Windows terminal.
+
+![Alt text](example.png?raw=true "ASCII Magic example")
 
 ## Basic usage
 
@@ -62,7 +64,7 @@ As above, but using an image loaded with Pillow.
 
 ```python
 from_image(
-    img:Image,
+    img: Image,
     # ... as above
 ) -> str
 ```
@@ -74,15 +76,15 @@ Example:
 ```python
 from PIL import Image
 with Image.open('images/1.jpg') as img:
-    ascii_art = ascii_magic.from_image_file(img, columns=100)
+    ascii_art = ascii_magic.from_image(img, columns=100)
 ```
 
 ### to_terminal()
 
-Initializes colorama (which is required on Windows) and prints ASCII art to the terminal. It's the same as doing ```colorama.init()``` before printing normally.
+Initializes Colorama (which is required on Windows) and prints ASCII art to the terminal. It's the same as doing ```colorama.init()``` before printing normally.
 
 ```python
-to_terminal(ascii_art:str) -> None
+to_terminal(ascii_art: str) -> None
 ```
 
 ## Licence
