@@ -2,7 +2,7 @@
 
 Python package that converts images into ASCII art with terminal colors. Thanks to Colorama it's compatible with the Windows terminal.
 
-![Alt text](example.png?raw=true "ASCII Magic example")
+![ASCII Magic example](https://raw.githubusercontent.com/LeandroBarone/python-ascii_magic/master/example.png)
 
 ## Basic usage
 
