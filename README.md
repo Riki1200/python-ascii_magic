@@ -18,10 +18,10 @@ Converts an image file into ASCII art with terminal color codes.
 
 ```python
 from_image_file(
-    path:str,
-    columns:int=120,
-    width_ratio:float=2.5,
-    char:str=None
+    path: str,
+    columns: int = 120,
+    width_ratio: float = 2.5,
+    char: str = None
 ) -> str
 ```
 
@@ -36,6 +36,26 @@ Example:
 from_image_file('images/1.jpg', columns=100, width_ratio=2.6, char='@')
 ```
 
+### from_url()
+
+As above, but using the URL of an image.
+
+```python
+from_url(
+    url: str,
+    # ... as above
+) -> str
+```
+
+- url => an URL which will be loaded via urllib (supports redirects)
+
+Example:
+
+```python
+img_url = 'https://source.unsplash.com/800x600?nature'
+ascii_art = ascii_magic.from_url(img_url, columns=100)
+```
+
 ### from_image()
 
 As above, but using an image loaded with Pillow.
@@ -47,16 +67,14 @@ from_image(
 ) -> str
 ```
 
-- img => PIL image
+- img => PIL image object
 
 Example:
 
 ```python
-import ascii_magic
 from PIL import Image
-img = Image.open('images/1.jpg')
-ascii_art = ascii_magic.from_image_file(img, columns=100)
-img.close()
+with Image.open('images/1.jpg') as img:
+    ascii_art = ascii_magic.from_image_file(img, columns=100)
 ```
 
 ### to_terminal()
