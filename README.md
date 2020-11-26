@@ -49,7 +49,7 @@ ascii_magic.from_image_file(
 
 Result:
 
-![ASCII Magic HTML mode example](https://raw.githubusercontent.com/LeandroBarone/python-ascii_magic/master/example2.png)
+![ASCII Magic HTML mode example](https://raw.githubusercontent.com/LeandroBarone/python-ascii_magic/master/example_lion.png)
 
 ## from_url()
 
