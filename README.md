@@ -1,12 +1,14 @@
 # ASCII Magic
 
-Converts images into ASCII art. Requires colorama and PIL.
+Python package that converts images into ASCII art. Requires colorama and PIL.
 
-## Usage
+## Basic usage
 
-	import ascii_magic
-	output = ascii_magic.from_image_file('picture.jpg')
-	ascii_magic.to_terminal(output)
+```python
+import ascii_magic
+output = ascii_magic.from_image_file('picture.jpg')
+ascii_magic.to_terminal(output)
+```
 
 ## Available functions
 
@@ -15,11 +17,11 @@ Converts images into ASCII art. Requires colorama and PIL.
 Converts an image file into ASCII art with terminal color codes.
 
 ```python
-ascii_magic.from_image_file(
-	path:str,
-	columns:int=120,
-	width_ratio:float=2.5,
-	char:str=None
+from_image_file(
+    path:str,
+    columns:int=120,
+    width_ratio:float=2.5,
+    char:str=None
 ) -> str
 ```
 
@@ -39,9 +41,9 @@ ascii_art = ascii_magic.from_image_file('images/1.jpg', columns=100, width_ratio
 As above, but using an image loaded with Pillow.
 
 ```python
-ascii_magic.from_image(
-	img:Image,
-	# ... as above
+from_image(
+    img:Image,
+    # ... as above
 ) -> str
 ```
 
@@ -62,11 +64,11 @@ img.close()
 Initializes colorama (which is required on Windows) and prints ASCII art to the terminal. It's the same as doing ```colorama.init()``` before printing normally.
 
 ```python
-ascii_magic.to_terminal(ascii_art:str) -> None
+to_terminal(ascii_art:str) -> None
 ```
 
 ## Licence
 
-Copyright (c) 2020 Leandro Barone.
+Copyright ©2020 Leandro Barone.
 
 Usage is provided under the MIT License. See LICENSE for the full details.
