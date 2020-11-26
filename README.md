@@ -10,24 +10,63 @@ Converts images into ASCII art. Requires colorama and PIL.
 
 ## Available functions
 
-	# Converts an image file into ASCII art with terminal color codes
-	#	path: a PIL-compatible file, such as picture.jpg
-	#	columns: the number of characters per row, more columns = wider art
-	#	pixel_width: ASCII characters are not square, so this adjusts the width to height ratio
-	#	char: instead of using many different ASCII glyphs, you can use a single one
-	ascii_magic.from_image_file(
-		path:str,
-		columns:int=120,
-		width_ratio:float=2.5,
-		char:str=None
-	) -> str
-	
-	# As above, but from an image loaded with PIL
-	ascii_magic.from_image(
-		path:Image, # PIL image
-		# ... as above
-	) -> str
+### from_image_file()
 
-	# Initializes colorama (required on Windows) and prints ASCII art to the terminal
-	# It's the same as doing colorama.init() before printing normally
-	ascii_magic.to_terminal(ascii_art: str) -> None
+Converts an image file into ASCII art with terminal color codes.
+
+```python
+ascii_magic.from_image_file(
+	path:str,
+	columns:int=120,
+	width_ratio:float=2.5,
+	char:str=None
+) -> str
+```
+
+- path => a PIL-compatible file, such as picture.jpg
+- columns (optional) => the number of characters per row, more columns = wider art
+- pixel_width (optional) => ASCII characters are not square, so this adjusts the width to height ratio
+- char (optional) => instead of using many different ASCII glyphs, you can use a single one, such as '#'
+
+Example:
+
+```python
+ascii_art = ascii_magic.from_image_file('images/1.jpg', columns=100, width_ratio=2.6, char='@')
+```
+
+### from_image()
+
+As above, but using an image loaded with Pillow.
+
+```python
+ascii_magic.from_image(
+	img:Image,
+	# ... as above
+) -> str
+```
+
+- img => PIL image
+
+Example:
+
+```python
+from PIL import Image
+img = Image.open('images/1.jpg')
+ascii_art = ascii_magic.from_image_file(img, columns=100, width_ratio=2.6, char='@')
+img.close()
+```
+
+
+### to_terminal()
+
+Initializes colorama (which is required on Windows) and prints ASCII art to the terminal. It's the same as doing ```colorama.init()``` before printing normally.
+
+```python
+ascii_magic.to_terminal(ascii_art:str) -> None
+```
+
+## Licence
+
+Copyright (c) 2020 Leandro Barone.
+
+Usage is provided under the MIT License. See LICENSE for the full details.
