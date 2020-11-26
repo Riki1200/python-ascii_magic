@@ -1,6 +1,6 @@
 # ASCII Magic
 
-Python package that converts images into ASCII art with terminal colors. Thanks to Colorama it's compatible with the Windows terminal.
+Python package that converts images into ASCII art with terminal colors. Thanks to Colorama it's compatible with the Windows terminal. Code based on [ProfOak's Ascii Py](https://github.com/ProfOak/Ascii_py/).
 
 ![ASCII Magic example](https://raw.githubusercontent.com/LeandroBarone/python-ascii_magic/master/example.png)
 
