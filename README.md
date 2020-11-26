@@ -33,7 +33,7 @@ from_image_file(
 Example:
 
 ```python
-ascii_art = ascii_magic.from_image_file('images/1.jpg', columns=100, width_ratio=2.6, char='@')
+from_image_file('images/1.jpg', columns=100, width_ratio=2.6, char='@')
 ```
 
 ### from_image()
@@ -52,12 +52,12 @@ from_image(
 Example:
 
 ```python
+import ascii_magic
 from PIL import Image
 img = Image.open('images/1.jpg')
-ascii_art = ascii_magic.from_image_file(img, columns=100, width_ratio=2.6, char='@')
+ascii_art = ascii_magic.from_image_file(img, columns=100)
 img.close()
 ```
-
 
 ### to_terminal()
 
@@ -69,6 +69,6 @@ to_terminal(ascii_art:str) -> None
 
 ## Licence
 
-Copyright ©2020 Leandro Barone.
+Copyright (c) 2020 Leandro Barone.
 
 Usage is provided under the MIT License. See LICENSE for the full details.
